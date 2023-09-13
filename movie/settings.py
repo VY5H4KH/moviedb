@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'movie.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://moviedb_uf4x_user:sSZ6nYTxBgM6gtMPidgzfkIDlp0NU8Dv@dpg-ck0omi1jbtgs73c96ca0-a/moviedb_uf4x')
+    'default': dj_database_url.config(default='postgres://moviedb_uf4x_user:sSZ6nYTxBgM6gtMPidgzfkIDlp0NU8Dv@dpg-ck0omi1jbtgs73c96ca0-a.oregon-postgres.render.com/moviedb_uf4x')
 }
 
 
