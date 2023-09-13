@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'movie.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default='your_default_database_url')
+    'default': dj_database_url.config(default='postgres://moviedb_uf4x_user:sSZ6nYTxBgM6gtMPidgzfkIDlp0NU8Dv@dpg-ck0omi1jbtgs73c96ca0-a/moviedb_uf4x')
 }
 
 
