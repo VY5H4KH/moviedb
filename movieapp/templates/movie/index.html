@@ -23,7 +23,7 @@
         {% for movie in movies %}
             <a class="item" href="{% url 'details' movie.mov_id %}">
                 <div class="EventClass">
-                    <img id="Interstellar" src="{{movie.mon_wat}}" alt="Image">
+                    <img id="Interstellar" src="{{movie.mon_wat.url}}" alt="Image">
                     <h2>{{movie.mov_name}}</h2>
                     <p>{{movie.mov_date}}</p>
                     <p>Rating {{movie.mov_rat}}/10</p> 
