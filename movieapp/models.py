@@ -18,10 +18,10 @@ class Movie(models.Model):
         return self.mov_name
 
 class Review(models.Model):
-    rev_name = models.CharField(max_length=100)
-    rev_mail =  models.EmailField(max_length=100)
-    rev_con = models.TextField()
+    Name = models.CharField(max_length=100)
+    Mail_id =  models.EmailField(max_length=100)
+    Your_Review = models.TextField()
     movi_name = models.ForeignKey('Movie',on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.rev_name
+        return self.Name
