@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Nunito:wght@500;700&family=Prompt:wght@300&display=swap" rel="stylesheet">
+</head>
+<body id="home">
+    <header>
+        <a href="{% url 'index' %}"><img id="logo" src="https://www.freeiconspng.com/uploads/review-icon-png-17.png" alt="logo"/></a>
+        <nav class="Navbar">                             
+            <a href="{% url 'index' %}" class="navb">Home</a>
+            <a href="" class="navb">Login</a>
+            <a href="" class="navb">Registration</a>
+        </nav>
+    </header>
+    <section id="EventSec">
+        {% for movie in movies %}
+            <a class="item" href="{% url 'details' movie.mov_id %}">
+                <div class="EventClass">
+                    <img id="Interstellar" src="{{movie.mov_img.url}}" alt="Image">
+                    <h2>{{movie.mov_name}}</h2>
+                    <p>{{movie.mov_date}}</p>
+                    <p>Rating {{movie.mov_rat}}/10</p> 
+                    <p>Details</p>
+                </div>
+            </a>
+        {% endfor %}
+        <a class="item" href="./details.html">
+            <div class="EventClass">
+                <img id="Inception" src="https://c4.wallpaperflare.com/wallpaper/874/819/824/edward-norton-brad-pitt-men-actor-fight-club-hd-wallpaper-preview.jpg" alt="Inception">
+                <h2>Fight Club</h2>
+                <p>1999</p>
+                <p>Rating 8.8/10</p>
+                <p>Details</p>
+            </div>
+        </a>
+        <a class="item" href="./details.html">
+            <div class="EventClass">
+                <img id="Inception" src="https://stat5.bollywoodhungama.in/wp-content/uploads/2016/03/The-Martian-English.jpg" alt="Inception">
+                <h2>The Martian</h2>
+                <p>2018</p>
+                <p>Rating 8.0/10</p>
+                <p>Details</p>
+            </div>
+        </a>
+        <a class="item" href="./details.html">
+            <div class="EventClass">
+                <img id="Inception" src="https://m.media-amazon.com/images/M/MV5BOWRiZDIxZjktMTA1NC00MDQ2LWEzMjUtMTliZmY3NjQ3ODJiXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg" alt="Inception">
+                <h2>The Pianist</h2>
+                <p>2010</p>
+                <p>Rating 8.5/10</p>
+                <p>Details</p>
+            </div>
+        </a>
+        <a class="item" href="./details.html">
+            <div class="EventClass">
+                <img id="Inception" src="https://w0.peakpx.com/wallpaper/623/348/HD-wallpaper-the-matrix-1080x1920-morpheus-movies-neo-trinity.jpg" alt="Inception">
+                <h2>The Matrix</h2>
+                <p>1997</p>
+                <p>Rating 8.7/10</p>
+                <p>Details</p>
+            </div>
+        </a>
+    </section>
+    <footer style="position: absolute; bottom:0;">
+        <p>©2023 Movie DB</p>
+    </footer>
+</body>
+</html>

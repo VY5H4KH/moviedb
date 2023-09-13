@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&family=Nunito:wght@500;700&family=Prompt:wght@300&display=swap" rel="stylesheet">
+</head>
+<body id="bg">
+    <header style="background-color: rgba(0, 0, 0, 0.6);">
+        <a href="{% url 'index' %}"><img id="logo" src="https://www.freeiconspng.com/uploads/review-icon-png-17.png" alt="logo"/></a>
+        <nav class="Navbar">                             
+            <a href="{% url 'index' %}" class="navb">Home</a>
+            <a href="" class="navb">Login</a>
+            <a href="" class="navb">Registration</a>
+        </nav>
+    </header>
+    <section id="EventSec1">
+        <div id="details" class="EventClass1" style="width: 60%;">
+            <img id="pro" src="{{movie.mov_pro.url}}" alt="">
+            <h1>{{movie.mov_name}}</h1>
+            <p>{{movie.mov_date}}</p>
+            <p>Rating {{movie.mov_rat}}/10</p>
+            <p">Director: {{movie.mov_dir}}<br>
+            Writers: {{movie.mov_wir}} <br>
+            Stars: {{movie.mov_act}}</p>
+            <p style="font-size: 15px;">{{movie.mov_desc}}</p>
+            <div id="video">
+                <iframe width="560" height="315" src="{{movie.mov_tra}}?autoplay=1&mute=1" frameborder="0" allowfullscreen loading="lazy"></iframe>     
+                <a class="b" href="{{movie.mov_wat}}" target="_blank">Where to watch</a>       
+            </div>
+            <div class="form-center">
+                <form action="{% url 'details' movie.mov_id %}" method="POST">
+                    <h5>Enter Your Thoughts</h5>
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer style="background-color: rgba(0, 0, 0, 0.6);">
+        <p>©2023 Movie DB</p>
+    </footer>
+</body>
+</html>
