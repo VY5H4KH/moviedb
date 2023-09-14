@@ -11,8 +11,8 @@ class Movie(models.Model):
     mov_wir = models.CharField(max_length=200)
     mov_tra = models.URLField()
     mov_wat = models.URLField()
-    mov_img = models.ImageField(upload_to='')
-    mov_pro = models.ImageField(upload_to='',null=True,blank=True)
+    mov_img = models.URLField()
+    mov_pro = models.URLField()
 
     def __str__(self):
         return self.mov_name
