@@ -30,8 +30,8 @@
             Stars: {{movie.mov_act}}</p>
             <p style="font-size: 15px;">{{movie.mov_desc}}</p>
             <div id="video" style="width: 100%;">
-                <iframe width="560" height="315" src="{{movie.mov_tra}}?autoplay=1&mute=1" frameborder="0" allowfullscreen loading="lazy"></iframe>     
-                <a class="b" href="{{movie.mov_wat}}" target="_blank">Where to watch</a>       
+                <iframe id="vi" style="width: 70%; " src="{{movie.mov_tra}}?autoplay=1&mute=1" frameborder="0" allowfullscreen loading="lazy"></iframe>     
+                <a class="b" style="width: 15%;" href="{{movie.mov_wat}}" target="_blank">Where to watch</a>       
             </div>
             <div class="form-center">
                 <form action="{% url 'details' movie.mov_id %}" method="POST">
