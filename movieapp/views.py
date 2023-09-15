@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Movie
+from .models import Review
 from .forms import Movieform
 
 # Create your views here.
@@ -20,8 +21,10 @@ def details(request,pk):
             review.movi_name = movie
             review.save()
     form = Movieform()
+    reviews = Review.objects.filter(movi_name=movie)
     context={
         'movie' : movie,
-        'form' : form
+        'form' : form,
+        'reviews' : reviews
     }
     return render(request,'movie/details.html',context)

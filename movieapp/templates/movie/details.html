@@ -40,6 +40,18 @@
                     {{form.as_p}}
                     <input type="submit" value="Submit">
                 </form>
+                <div id="cmnts" >
+                    <h3>Comments</h3>
+                    <hr style="border: none; border-top: 1px solid black;">
+                    {% for rev in reviews %}
+                        <div style="padding: 2px;">
+                            <div class="comment">
+                                <div class="user-name">{{rev.Name}}</div>
+                                <div class="comment-text">{{rev.Your_Review}}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </section>
